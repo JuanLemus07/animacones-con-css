@@ -1,0 +1,220 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/*version mobile*/
+.container {
+    width: 420px;
+    height: 720px;
+    font-family: 'Orbitron', sans-serif;
+    display: grid;
+    grid-template-areas:
+    'navbar'
+    'principal'
+    'footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 4fr 2fr;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    padding: auto;
+    }
+.navbar {
+    display: grid;
+    grid-area: navbar;
+    background-color: rgba(255, 0, 0, 0.692);
+    color: azure;
+    width: 100%;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    
+}
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.principal {
+    display: grid;
+    grid-area: principal;
+    width: 100%;
+    background-color: rgba(252, 248, 207, 0.938);
+}
+.gundams {
+    display: flex;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    flex-direction: column;
+    max-height: 570px;
+} 
+.gundam {
+    padding: 20px;
+    margin: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: darkred;
+}
+.footer {
+    display: grid;
+    grid-area: footer;
+    background-color: crimson;
+    color: azure;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;    
+}
+.item {
+    width: 250px;
+    height: 250px;
+    border-radius: 15%;
+    filter: grayscale(1);
+}
+.item:hover {
+    transition: filter 2s ease;
+    filter: grayscale(0);
+    width: 350px;
+    height: 350px;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    animation: movimiento 1s infinite;
+    animation-direction: alternate;
+}
+@keyframes movimiento{
+from {
+    transform: translateX(0);
+}
+to{
+    transform: translateX(105px);
+}
+}
+.boton {
+    width: 150px;
+    color: rgb(255, 0, 0);
+    background-color: rgb(239, 188, 169);
+}
+/*version desk*/
+@media screen and (min-width: 576px){
+    .container {
+        display: grid;
+        grid-template-areas: 
+        'navbar principal'
+        'navbar principal'
+        'footer footer';
+        grid-template-columns:15% 85%;
+        grid-template-rows: auto;
+        width: auto;
+    }
+    .navbar {
+        grid-area: navbar;
+        width: 15vw;
+        align-items: start;
+        height: 100vh;
+    }
+    .nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+    .title {
+        display: flex;
+        flex-direction: column;
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+    h5 {
+        padding-bottom: 20px;
+    }
+    @keyframes movimiento{
+        from {
+            transform: translateX(-50px);
+        }
+        to{
+            transform: translateX(50px);
+        }
+        }
+    .footer {
+        grid-area: footer;
+        width: 100vw;
+        height: 10vh;
+    }
+    .principal {
+        grid-area: principal;
+        width: 85vw;
+        height: 100vh;
+        margin: 0px;
+        padding: 0px;
+    }
+    .gundams {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0px;
+        justify-content: center;
+        width: auto;
+        height: 100vh;
+        margin: 0px;
+        padding: 0px;
+        padding-left: 20px;
+        padding-top: 5px;
+        max-height: 634px;
+    }
+    .gundam {
+        width: 240px;
+        margin: 0px;
+        padding: 0px;
+        height: 300px;
+    }
+    .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 230px;
+        height: 230px;
+    }
+    .item:hover {
+        transition: filter 2s ease;
+        filter: grayscale(0);
+        width: 240px;
+        height: 300px;
+    }
+}
+/*version tablet
+@media screen and (man-width: 768px){
+    .container {
+        display: grid;
+        grid-template-areas:
+        'navbar principal'
+        'navbar principal'
+        'footer footer';
+        grid-template-columns:20% 80%;
+        grid-template-rows: auto;
+        width: auto;
+    }
+    .navbar {
+        grid-area: navbar;
+        width: 20vw;
+        height: 90vh;
+    }
+    .principal {
+        grid-area: principal;
+        width: 80vw;
+        height: 90vh;
+    }
+    .footer {
+        grid-area: footer;
+        width: 100%;
+        height: 10vh;
+    }
+    .gundams {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        justify-content: center;
+    }
+}*/
